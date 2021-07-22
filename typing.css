@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    background: #333;
+    color: #80df20;
+    font-family: monospace;
+    margin: 0;
+}
+.container {
+    --characters: 26;
+    --typingSpeed: 5s;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+.container .text {
+    position: relative;
+}
+.container .text::before, .container .text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.container .text::before {
+    background: #333;
+    animation: typing var(--typingSpeed) steps(var(--characters)) 2s ;
+}
+.container .text::after {
+    background: green;
+    width: 1ch;
+    animation: typing var(--typingSpeed) steps(var(--characters)) 2s infinite, blinking 0.25s ease alternate infinite;
+}
+@keyframes blinking {
+    to {
+        background: transparent;
+   }
+}
+@keyframes typing {
+    80%, 100% {
+        left: 100%;
+   }
+}
