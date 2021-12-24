@@ -224,3 +224,100 @@ h2 > a:hover {
 
   padding: 10px;
 }
+
+/* Adding some animation to the emojis */
+
+#heart {
+  display: inline-block;
+  animation: heartbeat ease-in-out 300ms alternate infinite;
+}
+
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+#trophy {
+  display: inline-block;
+  animation: trophy ease-in-out 3s alternate infinite;
+}
+@keyframes trophy {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.4) rotateZ(360deg);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+#car {
+  display: inline-block;
+  /* offset-path: path("M20,20 C20,100 200,0 200,100"); */
+  offset-path: path("M500,40 L350,40 L330,10 L50,10 L12,40 L10,40");
+  animation: car linear 7s infinite;
+  transform: rotateZ(180deg);
+  left: 100px;
+  top: 100px;
+}
+
+@keyframes car {
+  0% {
+    offset-distance: 0%;
+    transform: rotateX(180deg);
+  }
+  5% {
+    offset-distance: 0%;
+  }
+  25% {
+    offset-distance: 0%;
+  }
+  50% {
+    offset-distance: 100%;
+    /* transform: rotateZ(180deg); */
+    transform: rotateX(180deg);
+  }
+  70% {
+    offset-distance: 100%;
+  }
+  75% {
+    offset-distance: 0%;
+  }
+  85% {
+    offset-distance: 0%;
+    transform: rotateX(180deg);
+  }
+  100% {
+    offset-distance: 0%;
+    /* transform: rotateX(180deg); */
+  }
+}
+
+#astro {
+  display: inline-block;
+
+  animation: astro ease-in-out 3s infinite;
+}
+
+@keyframes astro {
+  0% {
+    transform: translateY(10px);
+  }
+  35% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(10px);
+  }
+}
